@@ -18,7 +18,7 @@
                             <label class="label_item">&nbsp;&nbsp;FICTION</label>
                         </div>
                         <div>
-                            <a>
+                            <a [routerLink]="['/fiction']" (click)="fiction()">
                                 <img src="../assets/Next.svg">
                             </a>
                         </div>
@@ -132,4 +132,3 @@
         </div>
     </div>
 </div>
-<router-outlet></router-outlet>

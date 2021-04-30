@@ -13,6 +13,7 @@ import { PhilosophyComponent } from './components/philosophy/philosophy.componen
 import { HistoryComponent } from './components/history/history.component';
 import { AdventureComponent } from './components/adventure/adventure.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PoliticsComponent,
     PhilosophyComponent,
     HistoryComponent,
-    AdventureComponent
+    AdventureComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
