@@ -1,3 +1,30 @@
-.books_div {
+.main_div {
+    padding: 10%;
+    margin-left: 5%;
+    // flex-direction: column;
+    // box-sizing: border-box;
+    // display: flex;
+    // place-content: flex-start space-around;
+    // align-items: flex-start;
+}
+
+.books_div_1 {
+    background-color: white;
+}
+
+.books_div_2 {
     background-color: lavender;
+    width: 94%;
+    margin-top: 2%;
+}
+
+.label_item {
+    font-size: xx-large;
+    color: #5E56E7;
+    font-weight: 500;
+    position: absolute;
+}
+
+.image-data {
+
 }
