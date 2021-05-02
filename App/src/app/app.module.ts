@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { DxSelectBoxModule, DxListModule, DxTemplateModule } from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,7 +35,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatCardModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    DxSelectBoxModule,
+    DxListModule,
+    DxTemplateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 <div class="header">
-    <mat-card class="card text-blue">
+    <div class="card text-blue main_matcard">
         <img src="../assets/Pattern.svg" class="card-img" alt="...">
         <div class="card-img-overlay">
             <h5 class="h5_header card-title">Gutenberg Project</h5>
@@ -7,127 +7,131 @@
                 books, annotations,
                 and reviews.</p>
         </div>
-    </mat-card>
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Fiction.svg">
-                            <label class="label_item">&nbsp;&nbsp;FICTION</label>
-                        </div>
-                        <div>
-                            <a [routerLink]="['/fiction']" (click)="fiction()">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
-                    </div>
-                </mat-card>
-            </div>
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Philosophy.svg">
-                            <label class="label_item">&nbsp;&nbsp;PHILOSOPHY</label>
-                        </div>
-                        <div>
-                            <a [routerLink]="['/philosophy']">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
-                    </div>
-                </mat-card>
-            </div>
-        </div>
     </div>
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Drama.svg">
-                            <label class="label_item">&nbsp;&nbsp;DRAMA</label>
-                        </div>
-                        <div>
-                            <a [routerLink]="['/drama']">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
+    <div class="components_div">
+        <div>
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-4">
+                        <mat-card class="icons">
+                            <div fxLayout="row" fxLayoutGap="184px">
+                                <div>
+                                    <img class="images" src="../assets/Fiction.svg">
+                                    <label class="label_item">&nbsp;&nbsp;FICTION</label>
+                                </div>
+                                <div>
+                                    <a [routerLink]="['/fiction']" (click)="fiction()">
+                                        <img src="../assets/Next.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </mat-card>
                     </div>
-                </mat-card>
-            </div>
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/History.svg">
-                            <label class="label_item">&nbsp;&nbsp;HISTORY</label>
-                        </div>
-                        <div>
-                            <a [routerLink]="['/history']">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
+                    <div class="col-4">
+                        <mat-card class="icons">
+                            <div fxLayout="row" fxLayoutGap="184px">
+                                <div>
+                                    <img class="images" src="../assets/Philosophy.svg">
+                                    <label class="label_item">&nbsp;&nbsp;PHILOSOPHY</label>
+                                </div>
+                                <div>
+                                    <a [routerLink]="['/philosophy']">
+                                        <img src="../assets/Next.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </mat-card>
                     </div>
-                </mat-card>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Humour.svg">
-                            <label class="label_item">&nbsp;&nbsp;HUMOUR</label>
-                        </div>
-                        <div>
-                            <a [routerLink]="['/humour']">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-4">
+                        <mat-card class="icons">
+                            <div fxLayout="row" fxLayoutGap="184px">
+                                <div>
+                                    <img class="images" src="../assets/Drama.svg">
+                                    <label class="label_item">&nbsp;&nbsp;DRAMA</label>
+                                </div>
+                                <div>
+                                    <a [routerLink]="['/drama']">
+                                        <img src="../assets/Next.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </mat-card>
                     </div>
-                </mat-card>
-            </div>
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Adventure.svg">
-                            <label class="label_item">&nbsp;&nbsp;ADVENTURE</label>
-                        </div>
-                        <div>
-                            <a [routerLink]="['/adventure']">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
+                    <div class="col-4">
+                        <mat-card class="icons">
+                            <div fxLayout="row" fxLayoutGap="184px">
+                                <div>
+                                    <img class="images" src="../assets/History.svg">
+                                    <label class="label_item">&nbsp;&nbsp;HISTORY</label>
+                                </div>
+                                <div>
+                                    <a [routerLink]="['/history']">
+                                        <img src="../assets/Next.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </mat-card>
                     </div>
-                </mat-card>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Politics.svg">
-                            <label class="label_item">&nbsp;&nbsp;POLITICS</label>
-                        </div>
-                        <div>
-                            <a [routerLink]="['/politics']">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-4">
+                        <mat-card class="icons">
+                            <div fxLayout="row" fxLayoutGap="184px">
+                                <div>
+                                    <img class="images" src="../assets/Humour.svg">
+                                    <label class="label_item">&nbsp;&nbsp;HUMOUR</label>
+                                </div>
+                                <div>
+                                    <a [routerLink]="['/humour']">
+                                        <img src="../assets/Next.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </mat-card>
                     </div>
-                </mat-card>
+                    <div class="col-4">
+                        <mat-card class="icons">
+                            <div fxLayout="row" fxLayoutGap="184px">
+                                <div>
+                                    <img class="images" src="../assets/Adventure.svg">
+                                    <label class="label_item">&nbsp;&nbsp;ADVENTURE</label>
+                                </div>
+                                <div>
+                                    <a [routerLink]="['/adventure']">
+                                        <img src="../assets/Next.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
             </div>
-            <div class="col-4">
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-4">
+                        <mat-card class="icons">
+                            <div fxLayout="row" fxLayoutGap="184px">
+                                <div>
+                                    <img class="images" src="../assets/Politics.svg">
+                                    <label class="label_item">&nbsp;&nbsp;POLITICS</label>
+                                </div>
+                                <div>
+                                    <a [routerLink]="['/politics']">
+                                        <img src="../assets/Next.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+                    <div class="col-4">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

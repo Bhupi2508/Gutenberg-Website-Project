@@ -7,26 +7,25 @@
             </div>
 
         </div>
-        <!-- <div class="list-container">
-            <dx-list #list [dataSource]="products" [height]="400" [searchEnabled]="true" searchExpr="Name"
-                searchMode="contains">
-                <div *dxTemplate="let data of 'item'">
-                    <div>{{data.Name}}</div>
-                </div>
-            </dx-list>
-        </div>
-        <div class="options">
-            <div class="caption">Options</div>
-            <div class="option">
-                <span>Search mode</span>
-                <dx-select-box #searchMode [items]="['contains', 'startsWith']" [(value)]="list.searchMode">
-                </dx-select-box>
-            </div>
-        </div> -->
     </div>
-    <div class="books_div_2">
-        <input type="password" id="inputPassword5" class="form-control" placeholder="search"
-            aria-describedby="passwordHelpBlock">
+    <!-- <div class="books_div_2">
+        <input type="search" id="searchtext" class="form-control" placeholder="search">
+    </div> -->
+    <div class="list-container">
+        <dx-list #list [dataSource]="products" [height]="400" [searchEnabled]="true" searchExpr="Name"
+            searchMode="contains">
+            <div *dxTemplate="let data of 'item'">
+                <div>{{data.Name}}</div>
+            </div>
+        </dx-list>
+    </div>
+    <div class="options">
+        <div class="caption">Options</div>
+        <div class="option">
+            <span>Search mode</span>
+            <dx-select-box #searchMode [items]="['contains', 'startsWith']" [(value)]="list.searchMode">
+            </dx-select-box>
+        </div>
     </div>
 </div>
 <!-- second div -->
@@ -36,7 +35,7 @@
             <div fxLayout="column">
                 <div class="each_image_div">
                     <div class="card">
-                        <img src="../../../assets/Next.svg" class="card-img-top" alt="...">
+                        <img src="../../../assets/download.png" class="card-img-top" alt="...">
                     </div>
                 </div>
                 <div fxLayout="column" class="card-body">

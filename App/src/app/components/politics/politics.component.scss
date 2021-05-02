@@ -72,15 +72,18 @@
 }
 
 .card-text {
-    margin-left: 3%;
-    white-space: initial;
-    width: 100px;
-    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     font-variant: all-small-caps;
-    font-size: x-large;
-    height: 43px;
+    font-size: larger;
+    height: 38px;
     word-wrap: break-word;
     overflow-y: hidden;
+    margin-left: 3%;
+    font-weight: 500;
+    margin-top: 6%;
+    width: 131%;
 }
 
 .card-text_2 {
