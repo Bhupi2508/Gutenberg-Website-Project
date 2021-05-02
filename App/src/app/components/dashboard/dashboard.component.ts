@@ -15,10 +15,6 @@ export class DashboardComponent implements OnInit {
   }
 
   fiction() {
-    this.service.getMethod('http://skunkworks.ignitesol.com:8000/books').subscribe((data: any) => {
-      console.log("data==>", data);
-      this.service.provideMessage(data);
-      this.router.navigateByUrl('fiction');
-    });
+    this.router.navigateByUrl('fiction');
   }
 }

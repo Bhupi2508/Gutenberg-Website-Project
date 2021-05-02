@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl:'http://localhost:4200/',
+  baseUrl: 'http://localhost:4200/',
+  booksUrl: 'http://skunkworks.ignitesol.com:8000/books'
 };
 
 /*

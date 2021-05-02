@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment'
 })
 export class DataService {
   baseUrl = environment.baseUrl;
+  booksUrl = environment.booksUrl;
 
   private messageSource = new BehaviorSubject('default message');
   currentMessage = this.messageSource.asObservable();
@@ -15,6 +16,16 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getMethod(url: string) {
+    return this.http.get(url)
+  }
+
+  getSearchMethod(search: string, topic: string) {
+    let url = this.booksUrl;
+
+    if (search) {
+      url = url + `${topic}&search=${search}`
+    }
+
     return this.http.get(url)
   }
 

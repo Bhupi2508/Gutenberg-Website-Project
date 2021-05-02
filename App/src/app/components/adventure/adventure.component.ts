@@ -11,7 +11,18 @@ export class AdventureComponent implements OnInit {
 
   constructor(private service: DataService) { }
   ngOnInit(): void {
-    this.service.getMethod('http://skunkworks.ignitesol.com:8000/books').subscribe((data: any) => {
+    this.service.getMethod('http://skunkworks.ignitesol.com:8000/books/?topic=adventure').subscribe((data: any) => {
+      this.result = data.results
+    })
+  }
+
+  search(search: any) {
+    let value;
+    value = search.target.value
+    if (search.target.value.indexOf(' ') >= 0) {
+      value = search.target.value.replace(/\s/g, "%20")
+    }
+    this.service.getSearchMethod(value, '/?topic=adventure').subscribe((data: any) => {
       this.result = data.results
     })
   }
