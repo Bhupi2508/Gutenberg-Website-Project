@@ -1,0 +1,94 @@
+.main_div_header {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    padding: 7%;
+    margin-left: 8%;
+}
+
+.second_main_div {
+    background-color: lavender;
+    margin-top: -5%;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.second_div {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    margin-left: 194px;
+    // margin-top: 2%;
+    flex-wrap: wrap;
+}
+
+.inside_second_main_div {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    margin-left: 34px;
+}
+
+.each_image_div {
+    margin-right: 25%;
+    margin-top: 22%;
+}
+
+.books_div_1 {
+    background-color: white;
+}
+
+.books_div_2 {
+    background-color: lavender;
+    width: 97%;
+    margin-top: 2%;
+}
+
+.label_item {
+    font-size: xx-large;
+    color: #5E56E7;
+    font-weight: 500;
+    position: absolute;
+}
+
+.card {
+    width: 114px;
+    height: 162px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px 0 rgb(211 209 238 / 50%);
+}
+
+.card-body {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    margin-left: -10%;
+    place-self: flex-start;
+    width: 114px;
+    border-radius: 8px;
+    margin-top: -12%;
+}
+
+.card-text {
+    margin-left: 3%;
+    white-space: initial;
+    width: 100px;
+    text-overflow: ellipsis; 
+    font-variant: all-small-caps;
+    font-size: x-large;
+    height: 43px;
+    word-wrap: break-word;
+    overflow-y: hidden;
+}
+
+.card-text_2 {
+    margin-left: 3%;
+    white-space: nowrap; 
+    width: 100px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #A0A0A0;
+    margin-top: -8%;
+}

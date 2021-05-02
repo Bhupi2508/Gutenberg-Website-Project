@@ -1,135 +1,48 @@
-<div class="header">
-    <mat-card class="card text-blue">
-        <img src="../assets/Pattern.svg" class="card-img" alt="...">
-        <div class="card-img-overlay">
-            <h5 class="h5_header card-title">Gutenberg Project</h5>
-            <p class="p_header card-text">A social cataloging website that allows you to freely search its database of
-                books, annotations,
-                and reviews.</p>
-        </div>
-    </mat-card>
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Fiction.svg">
-                            <label class="label_item">&nbsp;&nbsp;FICTION</label>
-                        </div>
-                        <div>
-                            <a>
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
-                    </div>
-                </mat-card>
+<div fxLayout="column" class="main_div_header">
+    <div class="books_div_1">
+        <div fxLayout="row" fxLayoutGap="140px">
+            <div>
+                <a [routerLink]="['/']"> <img class="images" src="../../../assets/Back.svg"></a>
+                <label class="label_item">&nbsp;&nbsp;Philosophy</label>
             </div>
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Philosophy.svg">
-                            <label class="label_item">&nbsp;&nbsp;PHILOSOPHY</label>
-                        </div>
-                        <div>
-                            <a [routerLink]="['/philosophy']" href="https://www.w3schools.com">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
-                    </div>
-                </mat-card>
-            </div>
+
         </div>
+        <!-- <div class="list-container">
+            <dx-list #list [dataSource]="products" [height]="400" [searchEnabled]="true" searchExpr="Name"
+                searchMode="contains">
+                <div *dxTemplate="let data of 'item'">
+                    <div>{{data.Name}}</div>
+                </div>
+            </dx-list>
+        </div>
+        <div class="options">
+            <div class="caption">Options</div>
+            <div class="option">
+                <span>Search mode</span>
+                <dx-select-box #searchMode [items]="['contains', 'startsWith']" [(value)]="list.searchMode">
+                </dx-select-box>
+            </div>
+        </div> -->
     </div>
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Drama.svg">
-                            <label class="label_item">&nbsp;&nbsp;DRAMA</label>
-                        </div>
-                        <div>
-                            <a [routerLink]="['/drama']">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
-                    </div>
-                </mat-card>
-            </div>
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/History.svg">
-                            <label class="label_item">&nbsp;&nbsp;HISTORY</label>
-                        </div>
-                        <div>
-                            <a href="https://www.w3schools.com">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
-                    </div>
-                </mat-card>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Humour.svg">
-                            <label class="label_item">&nbsp;&nbsp;HUMOUR</label>
-                        </div>
-                        <div>
-                            <a href="https://www.w3schools.com">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
-                    </div>
-                </mat-card>
-            </div>
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Adventure.svg">
-                            <label class="label_item">&nbsp;&nbsp;ADVENTURE</label>
-                        </div>
-                        <div>
-                            <a href="https://www.w3schools.com">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
-                    </div>
-                </mat-card>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-4">
-                <mat-card class="icons">
-                    <div fxLayout="row" fxLayoutGap="140px">
-                        <div>
-                            <img class="images" src="../assets/Politics.svg">
-                            <label class="label_item">&nbsp;&nbsp;POLITICS</label>
-                        </div>
-                        <div>
-                            <a href="https://www.w3schools.com">
-                                <img src="../assets/Next.svg">
-                            </a>
-                        </div>
-                    </div>
-                </mat-card>
-            </div>
-            <div class="col-4">
-            </div>
-        </div>
+    <div class="books_div_2">
+        <input type="password" id="inputPassword5" class="form-control" placeholder="search"
+            aria-describedby="passwordHelpBlock">
     </div>
 </div>
-<router-outlet></router-outlet>
+<!-- second div -->
+<div class="second_main_div">
+    <div fxLayout="row" class="second_div">
+        <div fxLayout="row" class="inside_second_main_div" *ngFor="let image of result">
+            <div fxLayout="column">
+                <div class="each_image_div">
+                    <div class="card">
+                        <img src="../../../assets/Next.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div fxLayout="column" class="card-body">
+                    <p class="card-text">{{image?.title}}</p>
+                    <p class="card-text_2">{{image?.authors[0]?.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>

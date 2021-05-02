@@ -1,1 +1,48 @@
-<p>humour works!</p>
+<div fxLayout="column" class="main_div_header">
+    <div class="books_div_1">
+        <div fxLayout="row" fxLayoutGap="140px">
+            <div>
+                <a [routerLink]="['/']"> <img class="images" src="../../../assets/Back.svg"></a>
+                <label class="label_item">&nbsp;&nbsp;Humour</label>
+            </div>
+
+        </div>
+        <!-- <div class="list-container">
+            <dx-list #list [dataSource]="products" [height]="400" [searchEnabled]="true" searchExpr="Name"
+                searchMode="contains">
+                <div *dxTemplate="let data of 'item'">
+                    <div>{{data.Name}}</div>
+                </div>
+            </dx-list>
+        </div>
+        <div class="options">
+            <div class="caption">Options</div>
+            <div class="option">
+                <span>Search mode</span>
+                <dx-select-box #searchMode [items]="['contains', 'startsWith']" [(value)]="list.searchMode">
+                </dx-select-box>
+            </div>
+        </div> -->
+    </div>
+    <div class="books_div_2">
+        <input type="password" id="inputPassword5" class="form-control" placeholder="search"
+            aria-describedby="passwordHelpBlock">
+    </div>
+</div>
+<!-- second div -->
+<div class="second_main_div">
+    <div fxLayout="row" class="second_div">
+        <div fxLayout="row" class="inside_second_main_div" *ngFor="let image of result">
+            <div fxLayout="column">
+                <div class="each_image_div">
+                    <div class="card">
+                        <img src="../../../assets/Next.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div fxLayout="column" class="card-body">
+                    <p class="card-text">{{image?.title}}</p>
+                    <p class="card-text_2">{{image?.authors[0]?.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>

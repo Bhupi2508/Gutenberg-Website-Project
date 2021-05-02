@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DramaComponent } from './components/drama/drama.component';
 import { FictionComponent } from './components/fiction/fiction.component';
 import { HistoryComponent } from './components/history/history.component';
+import { HumourComponent } from './components/humour/humour.component';
 import { PhilosophyComponent } from './components/philosophy/philosophy.component';
 import { PoliticsComponent } from './components/politics/politics.component';
 
@@ -33,6 +34,10 @@ const routes: Routes = [{
 {
   path: 'politics',
   component: PoliticsComponent
+},
+{
+  path: 'humour',
+  component: HumourComponent
 }
 ];
 

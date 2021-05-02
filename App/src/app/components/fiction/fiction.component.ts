@@ -12,13 +12,8 @@ export class FictionComponent implements OnInit {
   constructor(private service: DataService) { }
 
   ngOnInit(): void {
-    // this.service.currentMessage.subscribe(message => {
-    //   this.message = message
-    //   console.log(this.message.results);
     this.service.getMethod('http://skunkworks.ignitesol.com:8000/books').subscribe((data: any) => {
       this.result = data.results
-      console.log(this.result);
-      
     })
   }
 
