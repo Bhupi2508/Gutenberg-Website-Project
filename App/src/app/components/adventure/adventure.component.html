@@ -13,7 +13,7 @@
     </div>
 </div>
 <!-- second div -->
-<div class="second_main_div">
+<div fxLayout="column" fxLayoutAlign="center center" class="second_main_div">
     <div fxLayout="row" class="second_div">
         <div fxLayout="row" class="inside_second_main_div" *ngFor="let image of result">
             <div fxLayout="column">
@@ -29,3 +29,19 @@
             </div>
         </div>
     </div>
+    <div>
+        <nav aria-label="...">
+            <ul class="pagination pagination-lg">
+                <li class="page-item active" aria-current="page">
+                    <!-- <span class="page-link">{{defaultPageSize}}</span> -->
+                </li>
+                <li class="page-item"><a class="page-link" (click)="PrevPagination()">{{prevPage}}</a>
+                </li>
+                <li class="page-item"><a class="page-link" (click)="pagination()">{{mainPage}}</a>
+                </li>
+                <li class="page-item"><a class="page-link" (click)="nextPagination()">{{nextpage}}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
