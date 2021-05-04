@@ -34,9 +34,9 @@
     <div>
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
-                <li class="page-item active" aria-current="page">
-                    <!-- <span class="page-link">{{defaultPageSize}}</span> -->
-                </li>
+                <div *ngIf="nextpage > 3">
+                    <li class="page-item"><a class="page-link" (click)="firstPage()">FirstPage</a>
+                </div>
                 <li class="page-item"><a class="page-link" (click)="PrevPagination()">{{prevPage}}</a>
                 </li>
                 <li class="page-item"><a class="page-link" (click)="pagination()">{{mainPage}}</a>

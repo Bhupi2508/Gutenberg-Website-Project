@@ -71,7 +71,7 @@ export class DramaComponent implements OnInit {
 
   // pagination for static (mid)
   pagination() {
-    this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.mainPage}&topic=fiction`).subscribe((data: any) => {
+    this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.mainPage}&topic=drama`).subscribe((data: any) => {
       this.result = data.results
     })
   }
@@ -81,12 +81,38 @@ export class DramaComponent implements OnInit {
     this.prevPage = this.mainPage - this.prevPage;
     this.mainPage = this.mainPage;
     this.nextpage = this.mainPage + 1
-    this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.nextpage}&topic=fiction`).subscribe((data: any) => {
+    this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.nextpage}&topic=drama`).subscribe((data: any) => {
       console.log(data);
       this.result = data.results
     });
     this.prevPage = this.mainPage;
     this.mainPage = this.nextpage;
     this.nextpage = this.nextpage + 1
+  }
+
+  firstPage() {
+    if (this.prevPage) {
+      this.prevPage = 1;
+    }
+    this.mainPage = this.prevPage + 1;
+    this.nextpage = this.mainPage + 1;
+    this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.prevPage}&topic=drama`).subscribe((data: any) => {
+      this.result = data.results
+    })
+    if (this.prevPage === 1) {
+      this.prevPage = 1;
+    } else {
+      this.prevPage = this.mainPage - 1;
+    }
+    if (this.mainPage === 2) {
+      this.mainPage = 2;
+    } else {
+      this.mainPage = this.nextpage - 1;
+    }
+    if (this.nextpage === 3) {
+      this.nextpage = 3;
+    } else {
+      this.nextpage = this.nextpage;
+    }
   }
 }
