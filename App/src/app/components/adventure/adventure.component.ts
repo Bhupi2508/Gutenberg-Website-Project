@@ -14,6 +14,7 @@ export class AdventureComponent implements OnInit {
   prevPage: any = 0;
   nextpage: any = 2;
   mainPage: any = 1;
+  findValue: Boolean = false
 
   constructor(private service: DataService) { }
   ngOnInit(): void {
@@ -34,6 +35,7 @@ export class AdventureComponent implements OnInit {
     if (search.target.value.indexOf(' ') >= 0) {
       value = search.target.value.replace(/\s/g, "%20")
     }
+    this.findValue = true
     this.service.getSearchMethod(value, '/?topic=adventure').subscribe((data: any) => {
       this.result = data.results
     })
@@ -81,7 +83,6 @@ export class AdventureComponent implements OnInit {
     this.mainPage = this.mainPage;
     this.nextpage = this.mainPage + 1
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.nextpage}&topic=adventure`).subscribe((data: any) => {
-      console.log(data);
       this.result = data.results
     });
     this.prevPage = this.mainPage;

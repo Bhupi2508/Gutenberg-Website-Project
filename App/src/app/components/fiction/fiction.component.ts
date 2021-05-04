@@ -9,11 +9,12 @@ import { DataService } from 'src/app/services/data.service';
 export class FictionComponent implements OnInit {
   result: any;
   data: any;
-  defaultPageSize: any = 0;
+  defaultPageSize: Number = 0;
   active: any = false;
   prevPage: any = 0;
   nextpage: any = 2;
   mainPage: any = 1;
+  findValue: Boolean = false
 
   constructor(private service: DataService) { }
 
@@ -35,14 +36,9 @@ export class FictionComponent implements OnInit {
     if (search.target.value.indexOf(' ') >= 0) {
       value = search.target.value.replace(/\s/g, "%20")
     }
+    this.findValue = true
     this.service.getSearchMethod(value, '/?topic=fiction').subscribe((data: any) => {
-      this.data = data;
       this.result = data.results;
-      let pageSize = 1;
-      this.defaultPageSize = Number(pageSize);
-      this.prevPage = this.defaultPageSize;
-      this.mainPage += this.defaultPageSize;
-      this.nextpage += this.defaultPageSize;
     })
   }
 
@@ -88,7 +84,6 @@ export class FictionComponent implements OnInit {
     this.mainPage = this.mainPage;
     this.nextpage = this.mainPage + 1
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.nextpage}&topic=fiction`).subscribe((data: any) => {
-      console.log("main", data);
       this.result = data.results
     });
     this.prevPage = this.mainPage;
