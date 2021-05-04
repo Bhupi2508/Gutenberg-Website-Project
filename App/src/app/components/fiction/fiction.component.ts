@@ -14,7 +14,9 @@ export class FictionComponent implements OnInit {
   prevPage: any = 0;
   nextpage: any = 2;
   mainPage: any = 1;
-  findValue: Boolean = false
+  findValue: Boolean = false;
+  noRecords: Boolean = false;
+  url: any;
 
   constructor(private service: DataService) { }
 
@@ -39,6 +41,11 @@ export class FictionComponent implements OnInit {
     this.findValue = true
     this.service.getSearchMethod(value, '/?topic=fiction').subscribe((data: any) => {
       this.result = data.results;
+      if (this.result.length < 1) {
+        this.noRecords = true;
+      } else {
+        this.noRecords = false;
+      }
     })
   }
 
@@ -115,5 +122,25 @@ export class FictionComponent implements OnInit {
     } else {
       this.nextpage = this.nextpage;
     }
+  }
+
+  bookTextTormat(id: any) {
+    this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?ids=${id}&topic=fiction`).subscribe((data: any) => {
+      const imageFormat = data.results[0].formats;
+
+      for (const key in imageFormat) {
+        if (Object.prototype.hasOwnProperty.call(imageFormat, key)) {
+          const element = imageFormat[key];
+
+          if (element.endsWith(".htm")) {
+            this.url = element;
+          } else if (element.endsWith(".txt")) {
+            this.url = element;
+          }
+        }
+      }
+      window.location.href = this.url
+    })
+
   }
 }

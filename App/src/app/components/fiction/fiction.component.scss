@@ -20,7 +20,6 @@
     box-sizing: border-box;
     display: flex;
     margin-left: 194px;
-    // margin-top: 2%;
     flex-wrap: wrap;
 }
 
@@ -53,11 +52,16 @@
     position: absolute;
 }
 
+.ancor_image {
+    border-radius: 8px;
+}
+
 .card {
     width: 114px;
     height: 162px;
     border-radius: 8px;
     box-shadow: 0 2px 5px 0 rgb(211 209 238 / 50%);
+    cursor: pointer;
 }
 
 .card-body {
@@ -98,4 +102,19 @@
 
 .page-item {
     cursor: pointer;
+}
+
+.error_div {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    background-color: red;
+    height: 25%;
+    margin-top: -5%;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
 }

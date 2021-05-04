@@ -13,14 +13,16 @@
     </div>
 </div>
 <!-- second div -->
-<div fxLayout="column" fxLayoutAlign="center center" class="second_main_div">
+<div *ngIf="!noRecords" fxLayout="column" fxLayoutAlign="center center" class="second_main_div">
     <div fxLayout="row" class="second_div">
         <div fxLayout="row" class="inside_second_main_div" *ngFor="let image of result">
             <div fxLayout="column">
                 <div class="each_image_div">
-                    <div class="card">
-                        <img src="../../../assets/download.png" class="card-img-top" alt="...">
-                    </div>
+                    <a id="{{image.id}}" (click)="bookTextTormat(image.id)">
+                        <div class="card">
+                            <img src="../../../assets/download.png" class="card-img-top ancor_image" alt="...">
+                        </div>
+                    </a>
                 </div>
                 <div fxLayout="column" class="card-body">
                     <p class="card-text">{{image?.title}}</p>
@@ -44,4 +46,7 @@
             </ul>
         </nav>
     </div>
+</div>
+<div fxLayout="column" fxLayoutAlign="center center" class="error_div" *ngIf="noRecords">
+    <h1>No records Found</h1>
 </div>
