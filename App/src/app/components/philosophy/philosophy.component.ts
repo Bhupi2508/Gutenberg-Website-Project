@@ -18,6 +18,10 @@ export class PhilosophyComponent implements OnInit {
   noRecords: Boolean = false;
   url: any;
   onlyOnePage: Boolean = false;
+  prev: Boolean = false;
+  main: Boolean = false;
+  next: Boolean = false;
+  first: Boolean = false;
 
   constructor(private service: DataService) { }
 
@@ -67,7 +71,11 @@ export class PhilosophyComponent implements OnInit {
     this.mainPage = this.prevPage + 1;
     this.nextpage = this.mainPage + 1
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.prevPage}&topic=philosophy`).subscribe((data: any) => {
-      this.result = data.results
+      this.result = data.results;
+      this.prev = true;
+      this.first = false;
+      this.main = false;
+      this.next = false;
     })
     if (this.prevPage === 1) {
       this.prevPage = 1;
@@ -89,7 +97,11 @@ export class PhilosophyComponent implements OnInit {
   // pagination for static (mid)
   pagination() {
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.mainPage}&topic=philosophy`).subscribe((data: any) => {
-      this.result = data.results
+      this.result = data.results;
+      this.prev = false;
+      this.first = false;
+      this.main = true;
+      this.next = false;
     })
   }
 
@@ -99,7 +111,11 @@ export class PhilosophyComponent implements OnInit {
     this.mainPage = this.mainPage;
     this.nextpage = this.mainPage + 1
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.nextpage}&topic=philosophy`).subscribe((data: any) => {
-      this.result = data.results
+      this.result = data.results;
+      this.prev = false;
+      this.first = false;
+      this.main = true;
+      this.next = false;
     });
     this.prevPage = this.mainPage;
     this.mainPage = this.nextpage;
@@ -113,7 +129,10 @@ export class PhilosophyComponent implements OnInit {
     this.mainPage = this.prevPage + 1;
     this.nextpage = this.mainPage + 1;
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.prevPage}&topic=philosophy`).subscribe((data: any) => {
-      this.result = data.results
+      this.result = data.results;
+      this.prev = true;
+      this.main = false;
+      this.next = false;
     })
     if (this.prevPage === 1) {
       this.prevPage = 1;

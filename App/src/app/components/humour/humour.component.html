@@ -32,17 +32,20 @@
         </div>
     </div>
     <div *ngIf="!findValue && !onlyOnePage">
-        {{onlyOnePage}}
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <div *ngIf="nextpage > 3">
-                    <li class="page-item"><a class="page-link" (click)="firstPage()">FirstPage</a>
+                    <li class="page-item"><a [style.background-color]="first ? 'cornflowerblue' : ''" class="page-link"
+                            (click)="firstPage()">FirstPage</a>
                 </div>
-                <li class="page-item"><a class="page-link" (click)="PrevPagination()">{{prevPage}}</a>
+                <li class="page-item"><a [style.background-color]="prev ? 'cornflowerblue' : ''" class="page-link"
+                        (click)="PrevPagination()">{{prevPage}}</a>
                 </li>
-                <li class="page-item"><a class="page-link" (click)="pagination()">{{mainPage}}</a>
+                <li class="page-item"><a [style.background-color]="main ? 'cornflowerblue' : ''" class="page-link"
+                        (click)="pagination()">{{mainPage}}</a>
                 </li>
-                <li class="page-item"><a class="page-link" (click)="nextPagination()">{{nextpage}}</a>
+                <li class="page-item"><a [style.background-color]="next ? 'cornflowerblue' : ''" class="page-link"
+                        (click)="nextPagination()">{{nextpage}}</a>
                 </li>
             </ul>
         </nav>
