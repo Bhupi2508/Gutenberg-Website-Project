@@ -17,18 +17,30 @@ export class FictionComponent implements OnInit {
   findValue: Boolean = false;
   noRecords: Boolean = false;
   url: any;
+  onlyOnePage: Boolean = false;
+  prev: Boolean = false;
+  main: Boolean = false;
+  next: Boolean = false;
+  first: Boolean = false;
 
   constructor(private service: DataService) { }
 
   ngOnInit(): void {
     this.service.getMethod('http://skunkworks.ignitesol.com:8000/books/?topic=fiction').subscribe((data: any) => {
-      this.data = data;
-      this.result = data.results;
-      let pageSize = 1;
-      this.defaultPageSize = Number(pageSize);
-      this.prevPage = this.defaultPageSize;
-      this.mainPage += this.defaultPageSize;
-      this.nextpage += this.defaultPageSize;
+      if (data.next === null) {
+        this.data = data;
+        this.result = data.results;
+        this.onlyOnePage = true;
+      } else {
+        this.data = data;
+        this.result = data.results;
+        let pageSize = 1;
+        this.defaultPageSize = Number(pageSize);
+        this.prevPage = this.defaultPageSize;
+        this.mainPage += this.defaultPageSize;
+        this.nextpage += this.defaultPageSize;
+        this.onlyOnePage = false;
+      }
     })
   }
 
@@ -60,6 +72,10 @@ export class FictionComponent implements OnInit {
     this.nextpage = this.mainPage + 1;
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.prevPage}&topic=fiction`).subscribe((data: any) => {
       this.result = data.results
+      this.prev = true;
+      this.first = false;
+      this.main = false;
+      this.next = false;
     })
     if (this.prevPage === 1) {
       this.prevPage = 1;
@@ -82,6 +98,10 @@ export class FictionComponent implements OnInit {
   pagination() {
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.mainPage}&topic=fiction`).subscribe((data: any) => {
       this.result = data.results
+      this.prev = false;
+      this.first = false;
+      this.main = true;
+      this.next = false;
     })
   }
 
@@ -92,6 +112,10 @@ export class FictionComponent implements OnInit {
     this.nextpage = this.mainPage + 1
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.nextpage}&topic=fiction`).subscribe((data: any) => {
       this.result = data.results
+      this.prev = false;
+      this.first = false;
+      this.main = true;
+      this.next = false;
     });
     this.prevPage = this.mainPage;
     this.mainPage = this.nextpage;
@@ -106,6 +130,9 @@ export class FictionComponent implements OnInit {
     this.nextpage = this.mainPage + 1;
     this.service.getMethod(`http://skunkworks.ignitesol.com:8000/books/?page=${this.prevPage}&topic=fiction`).subscribe((data: any) => {
       this.result = data.results
+      this.prev = true;
+      this.main = false;
+      this.next = false;
     })
     if (this.prevPage === 1) {
       this.prevPage = 1;

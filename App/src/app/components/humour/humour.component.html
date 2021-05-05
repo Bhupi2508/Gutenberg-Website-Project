@@ -31,7 +31,8 @@
             </div>
         </div>
     </div>
-    <div *ngIf="!findValue">
+    <div *ngIf="!findValue && !onlyOnePage">
+        {{onlyOnePage}}
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <div *ngIf="nextpage > 3">

@@ -17,17 +17,25 @@ export class AdventureComponent implements OnInit {
   findValue: Boolean = false;
   noRecords: Boolean = false;
   url: any;
+  onlyOnePage: Boolean = false;
 
   constructor(private service: DataService) { }
   ngOnInit(): void {
     this.service.getMethod('http://skunkworks.ignitesol.com:8000/books/?topic=adventure').subscribe((data: any) => {
-      this.data = data;
-      this.result = data.results;
-      let pageSize = 1;
-      this.defaultPageSize = Number(pageSize);
-      this.prevPage = this.defaultPageSize;
-      this.mainPage += this.defaultPageSize;
-      this.nextpage += this.defaultPageSize;
+      if (data.next === null) {
+        this.data = data;
+        this.result = data.results;
+        this.onlyOnePage = true;
+      } else {
+        this.data = data;
+        this.result = data.results;
+        let pageSize = 1;
+        this.defaultPageSize = Number(pageSize);
+        this.prevPage = this.defaultPageSize;
+        this.mainPage += this.defaultPageSize;
+        this.nextpage += this.defaultPageSize;
+        this.onlyOnePage = false;
+      }
     })
   }
 
